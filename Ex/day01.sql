@@ -83,3 +83,4 @@ select  first_name , last_name,
 from employees;
 
 -- 전체직원의 정보를 다음과 같이 출력하세요
+select * from employees;
