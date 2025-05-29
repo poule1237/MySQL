@@ -94,18 +94,19 @@ order by length(department_name) desc;
 정확하지 않지만, 지사가 있을 것으로 예상되는 나라들을 나라이름을 대문자로 출력하고
 올림차순(ASC)으로 정렬해 보세오.
 */
-select*
-from countries;
+select upper(country_name) country_name 
+from countries
+order by upper(country_name) asc ;
 
 /*
 문제10.
 입사일이 03/12/31 일 이전 입사한 직원의 이름, 월급, 전화 번호, 입사일을 출력하세요
 전화번호는 545-343-3433 과 같은 형태로 출력하시오.
 */
-select first_name 이름,
-	   salary 월급,
-       phone_number 전화번호,
-       hire_date 입사일
-from employees;
- 
+select  first_name, 
+        salary,
+        replace(phone_number, '.', '-') phone_number, 
+        hire_date
+from employees
+where hire_date <= '03/12/31' ;
 
